@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            ant compile jar run
+            }
+        }        
+    }
+	post {
+        always {
+            archive ‘build/jar/*.jar’
+        }
+	}
+	
+}
