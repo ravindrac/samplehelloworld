@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            ant compile jar run
+            sh 'ant compile jar run'
             }
         }        
     }
